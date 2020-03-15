@@ -1,0 +1,30 @@
+div#space {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #aaa;
+  div.content {
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: rgb(6, 193, 250);
+    }
+
+    p {
+      line-height: 1.5em;
+    }
+  }
+
+  img {
+    width: 400px;
+    border-radius: 50%;
+  }
+}
