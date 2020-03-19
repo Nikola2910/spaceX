@@ -7,6 +7,8 @@ div#laika {
   padding-top: 50px;
   padding-bottom: 50px;
   border-bottom: 1px solid #aaa;
+  min-height: 90vh;
+
   div.content {
     width: 460px;
     display: flex;

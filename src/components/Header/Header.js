@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "../../img/logo.png";
 import "./Header.scss";
+import { Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -14,19 +15,19 @@ class Header extends Component {
 
             <ul>
               <li>
-                <a href="#space">space</a>
+                <NavLink to="/">home </NavLink>
               </li>
               <li>
-                <a href="#mars">mars</a>
+                <NavLink to="/mars">mars</NavLink>
               </li>
               <li>
-                <a href="#launches">launches</a>
+                <NavLink to="/launches">launches</NavLink>
               </li>
               <li>
-                <a href="#laika">laika</a>
+                <NavLink to="/laika">laika</NavLink>
               </li>
               <li>
-                <a href="#moonwalk">moonwalk</a>
+                <NavLink to="/moonwalk">moonwalk</NavLink>
               </li>
             </ul>
           </div>

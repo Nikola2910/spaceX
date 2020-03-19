@@ -7,11 +7,6 @@ const MoonWalk = () => {
   return (
     <div className="main-wrapper">
       <div id="moonwalk">
-        <Fade left>
-          <a href="https://www.youtube.com/watch?v=Zi_XLOBDo_Y" target="blank">
-            <img src={moonwalk} alt="" />
-          </a>
-        </Fade>
         <div className="content">
           <Fade right>
             <h2>Moon Walk</h2>
@@ -30,6 +25,11 @@ const MoonWalk = () => {
             </p>
           </Fade>
         </div>
+        <Fade left>
+          <a href="https://www.youtube.com/watch?v=Zi_XLOBDo_Y" target="blank">
+            <img src={moonwalk} alt="" />
+          </a>
+        </Fade>
       </div>
     </div>
   );

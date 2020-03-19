@@ -9,7 +9,10 @@ div.fullStars {
 div#launches {
   padding-top: 50px;
   text-align: center;
-  min-height: 400px;
+  min-height: 90vh;
+  padding-bottom: 50px;
+
+  position: relative;
 
   button.whereto {
     padding: 10px 20px;
@@ -23,12 +26,12 @@ div#launches {
     cursor: pointer;
     transition: 0.3s;
     position: relative;
-    top: 150px;
+    top: 40vh;
     animation: pulse 3s ease-in-out infinite;
   }
 
   h1 {
-    padding: 10px 20px;
+    padding: 60px 20px 0 20px;
     font-size: 3em;
     color: rgb(6, 193, 250);
     position: relative;

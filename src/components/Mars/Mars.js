@@ -7,13 +7,8 @@ const Mars = () => {
   return (
     <div className="main-wrapper">
       <div id="mars">
-        <Fade left>
-          <a href="https://www.google.com/mars/" target="blank">
-            <img src={mars} alt="" />
-          </a>
-        </Fade>
         <div className="content">
-          <Fade right>
+          <Fade left>
             <h2>Mars</h2>
             <p>
               Mars is the fourth planet from the Sun and the second-smallest
@@ -28,6 +23,11 @@ const Mars = () => {
             </p>
           </Fade>
         </div>
+        <Fade right>
+          <a href="https://www.google.com/mars/" target="blank">
+            <img src={mars} alt="" />
+          </a>
+        </Fade>
       </div>
     </div>
   );

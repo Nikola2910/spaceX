@@ -3,6 +3,7 @@ import axios from "axios";
 import loaderGif from "./img/loader.gif";
 import "./reset.scss";
 import "./App.scss";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import { Header } from "./components/Header/Header";
 import { Cover } from "./components/Cover/Cover";
@@ -77,44 +78,50 @@ class App extends Component {
         console.log(response);
         this.setState({
           oneFlight: response.data,
-          showFlight: true
+          showFlight: true,
+          header: false
         });
       });
   };
 
   closeFlight = () => {
     this.setState({
-      showFlight: !this.state.showFlight
+      showFlight: !this.state.showFlight,
+      header: true
     });
   };
 
   render() {
     return (
-      <Fragment>
+      <BrowserRouter>
         {this.state.header && <Header />}
+        <Route exact path="/" component={(Cover, Space)}>
+          <Cover />
+          <Space />
+        </Route>
 
-        <Cover />
-        <Space />
-        <Mars />
+        <Route path="/mars" component={Mars} />
 
-        {this.state.loading ? (
-          <div className="loaderDiv">
-            {" "}
-            <img className="loader" src={loaderGif} alt="loader-gif" />
-          </div>
-        ) : (
-          <Launches
-            getLaunches={this.getLaunches}
-            flights={this.state.flights}
-            button={this.state.button}
-            getFlightInfo={num => {
-              this.getFlightInfo(num);
-            }}
-            offset={this.state.offset}
-            nextPage={this.nextPage}
-            prevPage={this.prevPage}
-          />
-        )}
+        <Route path="/launches" component={Launches}>
+          {this.state.loading ? (
+            <div className="loaderDiv">
+              {" "}
+              <img className="loader" src={loaderGif} alt="loader-gif" />
+            </div>
+          ) : (
+            <Launches
+              getLaunches={this.getLaunches}
+              flights={this.state.flights}
+              button={this.state.button}
+              getFlightInfo={num => {
+                this.getFlightInfo(num);
+              }}
+              offset={this.state.offset}
+              nextPage={this.nextPage}
+              prevPage={this.prevPage}
+            />
+          )}
+        </Route>
         {this.state.showFlight ? (
           <OneLaunch
             oneFlightInfo={this.state.oneFlight}
@@ -122,10 +129,11 @@ class App extends Component {
             showFlight={this.state.showFlight}
           />
         ) : null}
-        <Laika />
-        <MoonWalk />
+        <Route path="/laika" component={Laika} />
+
+        <Route path="/moonwalk" component={MoonWalk} />
         <Footer />
-      </Fragment>
+      </BrowserRouter>
     );
   }
 }

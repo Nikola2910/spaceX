@@ -24,6 +24,7 @@ div.navbar {
         color: white;
         font-weight: bold;
         padding: 10px;
+        outline: none;
 
         &:hover {
           border-bottom: 2px solid white;
@@ -31,4 +32,8 @@ div.navbar {
       }
     }
   }
+}
+
+.active {
+  border-bottom: 2px solid white;
 }
